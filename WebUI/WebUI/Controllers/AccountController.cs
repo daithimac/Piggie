@@ -80,10 +80,10 @@ namespace WebUI.Controllers
                 // Attempt to register the user
                 try
                 {
-                    CreateAccountHandler.CreateAccount(Guid.NewGuid(), model.UserName, model.Password, "adrian", "murphy");
+                    CreateAccountHandler.CreateAccount(Guid.NewGuid(), model.Email, model.Password, model.Forename, model.Surname);
                     
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.Email, model.Password);
+                    WebSecurity.Login(model.Email, model.Password);
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)
