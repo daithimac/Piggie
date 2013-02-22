@@ -10,7 +10,8 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using WebUI.Filters;
 using WebUI.Models;
-using WebUI.Services.Authentication.Handlers;
+using WebUI.Services.Authentication.Handlers.Commands;
+using WebUI.Services.Authentication.Handlers.Queries;
 
 namespace WebUI.Controllers
 {
@@ -36,7 +37,8 @@ namespace WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            //if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            if( LoginHandler.Login(model.UserName, model.Password))
             {
                 return RedirectToLocal(returnUrl);
             }
