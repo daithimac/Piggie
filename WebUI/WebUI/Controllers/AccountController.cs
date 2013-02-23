@@ -40,7 +40,8 @@ namespace WebUI.Controllers
             //if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             if( LoginHandler.Login(model.UserName, model.Password))
             {
-                return RedirectToLocal(returnUrl);
+                return RedirectToAction("Summary", "Funds");
+                //return RedirectToLocal(returnUrl);
             }
 
             // If we got this far, something failed, redisplay form
