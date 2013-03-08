@@ -38,8 +38,12 @@ namespace WebUI.Controllers
         public ActionResult Login(LoginModel model, string returnUrl)
         {
             //if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
-            if( LoginHandler.Login(model.UserName, model.Password))
+            var accountGuid = LoginHandler.Login(model.UserName, model.Password);
+            if( accountGuid != null )
             {
+                Session["UserName"] = model.UserName;
+                Session["AccountGuid"] = accountGuid;
+                
                 return RedirectToAction("Summary", "Funds");
                 //return RedirectToLocal(returnUrl);
             }
@@ -56,7 +60,9 @@ namespace WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            WebSecurity.Logout();
+            Session["UserName"] = null;
+            Session["AccountGuid"] = null;
+            //WebSecurity.Logout();
 
             return RedirectToAction("Index", "Home");
         }
@@ -84,10 +90,10 @@ namespace WebUI.Controllers
                 try
                 {
                     CreateAccountHandler.CreateAccount(Guid.NewGuid(), model.Email, model.Password, model.Forename, model.Surname);
-                    
-                    WebSecurity.CreateUserAndAccount(model.Email, model.Password);
-                    WebSecurity.Login(model.Email, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    //TODO: replace this with session
+                    //WebSecurity.CreateUserAndAccount(model.Email, model.Password);
+                    //WebSecurity.Login(model.Email, model.Password);
+                    return RedirectToAction("Summary", "Funds");
                 }
                 catch (MembershipCreateUserException e)
                 {
