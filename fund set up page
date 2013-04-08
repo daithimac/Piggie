@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+</head>
+<style type="text/css">
+.auto-style1 {
+  text-align: center;
+}
+body {
+	
+	font-family: arial, helvettica,sans-serif;
+	
+	line-height: 0px;
+	vertical-align: 0%;
+	text-indent: 0px;
+	word-spacing: 0em;
+	letter-spacing: 0em;
+	background-color: #FFFFF0;
+	list-style-type: disc;
+	table-layout: auto;
+	border-collapse: separate;
+	border-spacing: inherit;
+	empty-cells: hide;
+	caption-side: top;
+}
+</style>
+<body>
+<p class="auto-style1">&nbsp;</p>
+<img alt="" style="margin:0px auto;display:block" height="251" src="../Images/logo.png" width="1359"  /> 
+
+<form id=payment>
+	<fieldset>
+		<legend>Fund details</legend>
+		<ol>
+			<li>
+				<label for=name>Fund Name</label>
+				<input id=name name=fund type=text placeholder="Assign Fund name" required autofocus>
+			</li>
+			<li>
+				 <label for="frequency">Payment Frequency</label>
+				 <select id = "myList">
+               <option value = "1">Monthly</option>
+               <option value = "2">Weekly</option>
+               <option value = "3">Fortnightly</option>
+             </select>			</li>
+			
+			<li>
+				<label for=amount>Payment Amount</label>
+				€<input id=amount name=amount type=number pattern="^((\d+)|(\d{1,3})(\,\d{3}|)*)(\.\d{2}|)€" placeholder="€0.00" required>
+			</li>
+			<li>
+				<label for=Goal>FundGoal</label>
+				€<input id=Goal name=Goal type=number placeholder="€0.00" required>
+			</li>
+
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Payment address</legend>
+		<ol>
+		
+						<li>
+				<label for=PayDate>First Payment Date</label>
+				<input id=payDate name=postcode type=date required>
+			</li>
+			
+					
+			
+				
+					
+					
+						<li>
+							<input id=paypalTC name=PaypalTC type=checkbox required>
+							<label for=paypalTC>I accept PayPal's Terms and Conditions</label>
+						</li>
+												
+						
+						
+					
+							
+						<li>
+				<label for=paypalacc>Paypal Account</label>
+				<input id=paypalacc name=paypalacc type=text required>
+			</li>
+			<li>
+				<label for=paypalpw>Paypal Password</label>
+				<input id=paypalpw name=paypalpw type=text required>
+			</li>
+	
+			
+
+		</ol>
+	</fieldset>
+	<fieldset>
+							<input id=paypalTC name=PaypalTC type=checkbox required>
+							<label for=paypalTC>I accept Piggie.ie's Terms and Conditions</label>
+						
+
+		<button type=submit>Start Saving!</button>
+	</fieldset>
+</form>
+</body>
+
+</html>
