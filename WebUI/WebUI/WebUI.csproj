@@ -191,11 +191,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Authentication.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Services\Authentication\Data\Mocks\AuthenticationEntitiesMock.cs" />
     <Compile Include="Services\Authentication\Handlers\Commands\CreateAccountHandler.cs" />
     <Compile Include="Services\Authentication\Handlers\Queries\LoginHandler.cs" />
     <Compile Include="Services\Payments\Data\Fund.cs">
       <DependentUpon>Payments.tt</DependentUpon>
     </Compile>
+    <Compile Include="Services\Payments\Data\Mocks\PaymentsEntitiesMock.cs" />
     <Compile Include="Services\Payments\Data\Payments.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

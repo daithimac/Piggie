@@ -89,10 +89,13 @@ namespace WebUI.Controllers
                 // Attempt to register the user
                 try
                 {
-                    CreateAccountHandler.CreateAccount(Guid.NewGuid(), model.Email, model.Password, model.Forename, model.Surname);
+                    var accountGuid = Guid.NewGuid();
+                    CreateAccountHandler.CreateAccount(accountGuid, model.Email, model.Password, model.Forename, model.Surname);
                     //TODO: replace this with session
                     //WebSecurity.CreateUserAndAccount(model.Email, model.Password);
                     //WebSecurity.Login(model.Email, model.Password);
+                    Session["AccountGuid"] = accountGuid;
+
                     return RedirectToAction("Summary", "Funds");
                 }
                 catch (MembershipCreateUserException e)

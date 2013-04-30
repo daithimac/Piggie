@@ -16,12 +16,12 @@ namespace WebUI.Controllers
         {
             var accountGuid = (Guid)Session["AccountGuid"];
 
-            var fund = GetFundsHandler.GetFunds(accountGuid).First();
-            ViewData["Name"] = fund.Name;
-            ViewData["Amount"] = fund.Amount;
-            ViewData["GoalAmount"] = fund.GoalAmount;
-            ViewData["CreatedOn"] = fund.CreatedOn;
-            ViewData["ReleaseOn"] = fund.ReleaseOn;
+            //var fund = GetFundsHandler.GetFunds(accountGuid).First();
+            //ViewData["Name"] = fund.Name;
+            //ViewData["Amount"] = fund.Amount;
+            //ViewData["GoalAmount"] = fund.GoalAmount;
+            //ViewData["CreatedOn"] = fund.CreatedOn;
+            //ViewData["ReleaseOn"] = fund.ReleaseOn;
 
             ViewBag.Message = "Funds viewbag title";          
 

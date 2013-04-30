@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PaymentsModelStoreContainer" CdmEntityContainer="PaymentsEntities">
+    <EntitySetMapping Name="Funds">
+      <EntityTypeMapping TypeName="PaymentsModel.Fund">
+        <MappingFragment StoreEntitySet="Funds">
+          <ScalarProperty Name="FundId" ColumnName="FundId" />
+          <ScalarProperty Name="FundGuid" ColumnName="FundGuid" />
+          <ScalarProperty Name="AccountGuid" ColumnName="AccountGuid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="GoalAmount" ColumnName="GoalAmount" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ReleaseOn" ColumnName="ReleaseOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
