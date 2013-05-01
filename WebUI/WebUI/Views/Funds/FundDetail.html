@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+ <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+<link rel="stylesheet" type="text/css" href="Style1.css" />
+<link rel="stylesheet" type="text/css" href="animate-custom.css" />
+<style>
+body {
+		font-family: arial, helvettica,sans-serif;	
+		background-color: #FFFFF0;
+		
+}
+</style>
+</head>
+
+<body>
+
+<img alt="logo" style="margin:25px auto;display:block" height="10%" src="piggielogo.jpg" width="30%"  />
+<div id="container_demo" >
+    <a class="hiddenanchor" id="toregister"></a>
+    <a class="hiddenanchor" id="tologin"></a>
+    <div id="wrapper">
+        <div id="login" class="animate form">
+            <form  action="mysuperscript.php" autocomplete="on">
+                <h1>Fund Details</h1>
+                
+                <p>
+                 Fund Name
+                </p>
+    <p>
+        Name:       @ViewData["Name"] 
+        Amount:     @ViewData["Amount"] 
+        GoalAmount: @ViewData["GoalAmount"] 
+        CreatedOn:  @ViewData["CreatedOn"] 
+        ReleaseOn:  @ViewData["ReleaseOn"] 
+    </p>                                                   
+         <p class="login button">
+                    <input type="submit" value="Back" />
+                </p>
+               </form>
+        </div>         
+    </div>
+</div>  
+</body>
+
+</html>
+
+
