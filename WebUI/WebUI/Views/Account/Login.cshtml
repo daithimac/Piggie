@@ -6,10 +6,10 @@
     
 <!--<section id="loginForm">-->
     <link rel="stylesheet" type="text/css" href="../../Content/Style1.css" />
-<link rel="stylesheet" type="text/css" href="../../Content/animate-custom.css" />   
+<link rel="stylesheet" type="text/css" href="../../Content/animate-custom.css" />
     
 
-<!--    <fieldset>
+<!--    <fieldset><a href="~/Views/Account/_ExternalLoginsListPartial.cshtml">~/Views/Account/_ExternalLoginsListPartial.cshtml</a>
         <legend>Log in Form</legend>-->
         <div id="container_demo" >
     <a class="hiddenanchor" id="toregister"></a>
@@ -36,43 +36,13 @@
                     <input type="submit" value="Login" />
                 </p>
                 <p class="change_link">
-                    Not a member yet ?
-                    <a href="#toregister" class="to_register">Join us</a>
+                 Join Us!   @Html.ActionLink("Register", "Register") 
                 </p>
             </form>
         </div>
- @Model WebUI.Models
-        <div id="register" class="animate form">
-            <form  action="mysuperscript.php" autocomplete="on">
-                <h1> Sign up </h1>
-                <p>
-                    <label for="usernamesignup" class="uname" >Your username</label>
-                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Supersaver@Piggie.ie" />
-                </p>
-                <p>
-                    <label for="emailsignup" class="youmail"  > Your email</label>
-                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="Supersaver@Piggie.ie"/>
-                </p>
-                <p>
-                    <label for="passwordsignup" class="youpasswd" >Your password </label>
-                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. Savings"/>
-                </p>
-                <p>
-                    <label for="passwordsignup_confirm" class="youpasswd" >Please confirm your password </label>
-                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. Savings"/>
-                </p>
-                <p class="signin button">
-                    <input type="submit" value="Sign up"/>
-                </p>
-                <p class="change_link"> 
-                    Already a member ?
-                    <a href="#tologin" class="to_register"> Go and log in </a>
-                </p>
-            </form>
-        </div>
-         
-    </div>
-</div>  
+</div>
+            </div>
+        
         
         
         

@@ -71,8 +71,9 @@ namespace WebUI.Controllers
         // GET: /Account/Register
 
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Register(string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 

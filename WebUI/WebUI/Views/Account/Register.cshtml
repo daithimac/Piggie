@@ -1,45 +1,45 @@
 ﻿@model WebUI.Models.RegisterModel
-@{
-    ViewBag.Title = "Register";
-}
+<link rel="stylesheet" type="text/css" href="~/Content/Style1.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/animate-custom.css" />   
+    
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Create a new account.</h2>
-</hgroup>
+<!--    <fieldset><a href="~/Views/Account/_ExternalLoginsListPartial.cshtml">~/Views/Account/_ExternalLoginsListPartial.cshtml</a>
+        <legend>Log in Form</legend>-->
+        <div id="container_demo" >
+    <a class="hiddenanchor" id="toregister"></a>
+    <a class="hiddenanchor" id="tologin"></a>
+   <div id="wrapper">
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
-
-    <fieldset>
-        <legend>Registration Form</legend>
-        <ol>
-            <li>
+     <div id="login" class="animate form">
+            <form  action="mysuperscript.php" autocomplete="on">
+                <h1> Sign up </h1>
+                <p>
                 @Html.LabelFor(m => m.Email)
                 @Html.TextBoxFor(m => m.Email)
-            </li>
-            <li>
+                </p>
+                <p>
                 @Html.LabelFor(m => m.Forename)
                 @Html.TextBoxFor(m => m.Forename)
-            </li>
-            <li>
+                </p>
+                <p>
                 @Html.LabelFor(m => m.Surname)
                 @Html.TextBoxFor(m => m.Surname)
-            </li>
-            <li>
+                </p>
                 @Html.LabelFor(m => m.Password)
                 @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
+                </p>
+                <p>
                 @Html.LabelFor(m => m.ConfirmPassword)
                 @Html.PasswordFor(m => m.ConfirmPassword)
-            </li>
-        </ol>
-        <input type="submit" value="Register" />
-    </fieldset>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+                </p>
+                <p class="login button">
+                    <input type="submit" value="Register" />
+                <p class="change_link"> 
+                    Already a member? @Html.ActionLink("Login", "Login") 
+                </p>
+            </form>
+        </div>
+         
+    </div>
+</div>  
 }
