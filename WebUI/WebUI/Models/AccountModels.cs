@@ -58,7 +58,7 @@ namespace WebUI.Models
     public class LoginModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Your email or username")]
         public string UserName { get; set; }
 
         [Required]
@@ -66,7 +66,7 @@ namespace WebUI.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Keep Me Logged in?")]
         public bool RememberMe { get; set; }
     }
 
