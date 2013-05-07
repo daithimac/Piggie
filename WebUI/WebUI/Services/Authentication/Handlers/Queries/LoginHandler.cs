@@ -27,20 +27,27 @@ namespace WebUI.Services.Authentication.Handlers.Queries
             //    }
             //}
 
-            AuthenticationEntitiesMock.Accounts.Single(a => a.Login == email);
+            var results = AuthenticationEntitiesMock.Accounts.Where(a => a.Login == email && a.Password == password);
 
-            try
-            {
-                var accountEntity = AuthenticationEntitiesMock.Accounts.Single(a => a.Login == email);
-                if (accountEntity.Password == password)
-                    return accountEntity.AccountGuid;
-                else return null;
-            }
-
-            catch
+            if (results.Count() <= 0 || results.Count() > 1)
             {
                 return null;
             }
+
+            return results.First().AccountGuid;
+
+            //try
+            //{
+            //    var accountEntity = AuthenticationEntitiesMock.Accounts.Single(a => a.Login == email);
+            //    if (accountEntity.Password == password)
+            //        return accountEntity.AccountGuid;
+            //    else return null;
+            //}
+
+            //catch
+            //{
+            //    return null;
+            //}
         }
     }
 }

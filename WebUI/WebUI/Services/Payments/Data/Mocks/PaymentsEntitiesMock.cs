@@ -12,6 +12,15 @@ namespace WebUI.Services.Payments.Data.Mocks
         static PaymentsEntitiesMock()
         {
             Funds = new List<Fund>();
+            Funds.Add(new Fund
+            { AccountGuid = Guid.NewGuid(), 
+              Amount = 100, 
+              CreatedOn = DateTime.Now, 
+              FundGuid = Guid.NewGuid(),
+              FundId = 0, GoalAmount = 1000,
+              Name = "MyFund", 
+              ReleaseOn = DateTime.Now
+            });
         }
     }
 }

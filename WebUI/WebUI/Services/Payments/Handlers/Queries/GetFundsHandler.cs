@@ -18,7 +18,8 @@ namespace WebUI.Services.Payments.Handlers.Queries
             //    return fund;
             //}
 
-            var funds = PaymentsEntitiesMock.Funds.Where(a => a.AccountGuid == accountGuid).AsQueryable();
+            var funds = PaymentsEntitiesMock.Funds.AsQueryable();
+                //.Where(a => a.AccountGuid == accountGuid).AsQueryable();
             return funds;
         }
     }

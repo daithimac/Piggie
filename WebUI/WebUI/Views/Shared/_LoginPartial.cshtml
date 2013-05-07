@@ -1,4 +1,5 @@
 ﻿@if (Request.IsAuthenticated) {
+    <link rel="stylesheet" type="text/css" href="~/Content/Style1.css" />
     <text>
         Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {

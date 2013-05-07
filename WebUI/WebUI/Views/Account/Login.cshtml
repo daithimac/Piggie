@@ -23,7 +23,7 @@
                 </p>
                 <p>
                     @Html.LabelFor(m => m.Password)
-                    @Html.TextBoxFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password)
                     @Html.ValidationMessageFor(m => m.Password)
                 </p>
                 <p class="keeplogin">
@@ -37,11 +37,17 @@
                  Join Us!   @Html.ActionLink("Register", "Register") 
                 </p>
            
-        
+        </div>
     </div>
-</div>
-        
-        
+
+<footer>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p>&copy; @DateTime.Now.Year - Piggie.ie</p>
+        </div>
+    </div>
+</footer>    
+ </div>       
         
         
 

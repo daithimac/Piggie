@@ -44,7 +44,7 @@ namespace WebUI.Controllers
                 Session["UserName"] = model.UserName;
                 Session["AccountGuid"] = accountGuid;
                 
-                return RedirectToAction("Summary", "Funds");
+                return RedirectToAction("Manage", "Account");
                 //return RedirectToLocal(returnUrl);
             }
 
@@ -60,11 +60,9 @@ namespace WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            Session["UserName"] = null;
-            Session["AccountGuid"] = null;
-            //WebSecurity.Logout();
+            WebSecurity.Logout();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //

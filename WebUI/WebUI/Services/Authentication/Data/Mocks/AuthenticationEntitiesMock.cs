@@ -12,6 +12,15 @@ namespace WebUI.Services.Authentication.Data.Mocks
         static AuthenticationEntitiesMock()
         {
             Accounts = new List<Account>();
+            Accounts.Add(new Account
+            {
+                AccountGuid = Guid.NewGuid(),
+                AccountId = 0,
+                Forename = "Dave",
+                Surname = "Ward",
+                Login = "dave@ward.ie",
+                Password = "password"
+            });
         }
     }
 }

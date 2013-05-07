@@ -3,33 +3,46 @@
 @{
     ViewBag.Title = "Summary";
 }
+<link rel="stylesheet" type="text/css" href="~/Content/Style1.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/animate-custom.css" />  
+           <div id="container_demo" > 
+               <div id="wrapper">
+                    <div id="login" class="animate form">
+                         Hello, <a class="username" href="/Account/Manage" title="Manage">User</a>!
+<form action="/Account/LogOff" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="ym1DwYph4sLrCRfAGiuFR_Sy__s0a1Omw3ZAAGxd7hOl4jh-hlc9W7_v3TQ5PESdyKqGV5Ah5nXh4XBZ--rzPb2OBR6y7uAadAud_mUEz24NlTImexQsha_qU0ZpckVI0" />            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+</form>    
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
-</hgroup>
 
-<article>
+                    
+                <h1> Funds Summary </h1>
+                     
+
     <p>
-        Use this area to provide additional information.
-    </p>
-
-    <p>
-        Use this area to provide additional information.
-    </p>
-
-    <p>
-        Name:       @ViewData["Name"] 
+        Name:       @ViewData["Name"]        
+        </p> 
+      <p>
         Amount:     @ViewData["Amount"] 
-        GoalAmount: @ViewData["GoalAmount"] 
+          </p>
+                <p>
+        GoalAmount: @ViewData["GoalAmount"]
+                    </p>
+                <p> 
         CreatedOn:  @ViewData["CreatedOn"] 
+                    </p>
+                <p>
         ReleaseOn:  @ViewData["ReleaseOn"] 
     </p>                  
-</article>                
-                          
-<aside>                   
-    <h3>Aside Title</h3>
-    <p>
-        Use this area to provide additional information.
-    </p>
-</aside>
+ <p class="change_link">                       
+ @Html.Partial("_LoginPartial")                                                                                                                                                                                                                                                         
+<p>
+         </div>
+    </div>
+</div>
+
+<footer>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p>&copy; @DateTime.Now.Year - Piggie.ie</p>
+        </div>
+    </div>
+</footer>     
