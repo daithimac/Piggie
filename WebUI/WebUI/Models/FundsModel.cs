@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebUI.Models
 {
-    public class Fund
+    public class SummaryFund
     {
         public String Name { get; set; }
         public Decimal Amount { get; set; }
@@ -16,14 +16,13 @@ namespace WebUI.Models
 
     public class SummaryModel
     {
-        public List<Fund> Funds { get; set; }
+        public List<SummaryFund> Funds { get; set; }
     }
 
     public class CreateModel
     {
         public String Name { get; set; }
-        public String Frequency { get; set; }
         public Decimal GoalAmount { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public DateTime ReleaseOn { get; set; }
     }
 }
