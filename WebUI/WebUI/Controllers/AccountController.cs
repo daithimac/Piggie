@@ -35,7 +35,7 @@ namespace WebUI.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginModel model, string returnUrl)
+        public ActionResult Login(LoginModel model)//, string returnUrl)
         {
             //if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             var accountGuid = LoginHandler.Login(model.UserName, model.Password);
@@ -43,8 +43,8 @@ namespace WebUI.Controllers
             {
                 Session["UserName"] = model.UserName;
                 Session["AccountGuid"] = accountGuid;
-                
-                return RedirectToAction("Manage", "Account");
+
+                return RedirectToAction("Summary", "Funds");
                 //return RedirectToLocal(returnUrl);
             }
 

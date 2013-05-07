@@ -7,47 +7,39 @@
 <link rel="stylesheet" type="text/css" href="~/Content/animate-custom.css" />   
  <div id="container_demo" > 
       <div id="wrapper">
- <div id="login" class="animate form">
-
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
-
-    
-        
-        <h1>Register</h1>
-            <p>
-                @Html.LabelFor(m => m.Email)
-                @Html.TextBoxFor(m => m.Email)
-            </p>
-            <p>
-                @Html.LabelFor(m => m.Forename)
-                @Html.TextBoxFor(m => m.Forename)
-            </p>
-            <p>
-                @Html.LabelFor(m => m.Surname)
-                @Html.TextBoxFor(m => m.Surname)
-            </p>
-            <p>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-            </p>
-            <p>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword)
-            </p>
-        
-        <input type="submit" class="register button" value="Register" />
-
-            <p class="change_link"> 
+        <div id="login" class="animate form">
+        @using (Html.BeginForm()) 
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+            <h1>Register</h1>
+                <p>
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email)
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.Forename)
+                    @Html.TextBoxFor(m => m.Forename)
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.Surname)
+                    @Html.TextBoxFor(m => m.Surname)
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password)
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.ConfirmPassword)
+                    @Html.PasswordFor(m => m.ConfirmPassword)
+                </p>
+            <input type="submit" class="register button" value="Register" />
+                <p class="change_link"> 
                     Already a member? @Html.ActionLink("Login", "Login") 
                 </p>
-    
-}
+        }
         </div>
-   
     </div> 
-
  </div>
 
 
