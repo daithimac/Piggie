@@ -292,7 +292,7 @@
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Views\Account\login.html" />
     <None Include="Views\Funds\FundDetail.cshtml" />
-    <None Include="Views\Home\FundCreation.cshtml" />
+    <None Include="Views\Funds\FundCreation.cshtml" />
     <Content Include="Views\Funds\Copy of FundDisplay.html" />
     <Content Include="Views\Funds\FundDetail.html" />
     <Content Include="Views\Funds\FundDisplay.html" />
@@ -370,6 +370,7 @@
       <DependentUpon>Payments.edmx</DependentUpon>
       <LastGenOutput>Payments.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Shared\DisplayTemplates\Fund.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,27 +11,8 @@
                          Hello, <a class="username" href="/Account/Manage" title="Manage">User</a>!
 <form action="/Account/LogOff" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="ym1DwYph4sLrCRfAGiuFR_Sy__s0a1Omw3ZAAGxd7hOl4jh-hlc9W7_v3TQ5PESdyKqGV5Ah5nXh4XBZ--rzPb2OBR6y7uAadAud_mUEz24NlTImexQsha_qU0ZpckVI0" />            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
 </form>    
+    @Html.DisplayFor(m => m.Funds)
 
-
-                    
-                <h1> Funds Summary </h1>
-                     
-
-    <p>
-        Name:       @ViewData["Name"]        
-        </p> 
-      <p>
-        Amount:     @ViewData["Amount"] 
-          </p>
-                <p>
-        GoalAmount: @ViewData["GoalAmount"]
-                    </p>
-                <p> 
-        CreatedOn:  @ViewData["CreatedOn"] 
-                    </p>
-                <p>
-        ReleaseOn:  @ViewData["ReleaseOn"] 
-    </p>                  
  <p class="change_link">                       
  @Html.Partial("_LoginPartial")                                                                                                                                                                                                                                                         
 <p>

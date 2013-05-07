@@ -57,12 +57,14 @@ namespace WebUI.Controllers
         // POST: /Account/LogOff
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            WebSecurity.Logout();
+            //WebSecurity.Logout();
 
-            return RedirectToAction("Login", "Account");
+            Session["AccountGuid"] = null;
+
+            return RedirectToAction("Login");
         }
 
         //

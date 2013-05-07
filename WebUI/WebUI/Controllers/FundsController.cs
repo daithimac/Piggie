@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebUI.Services.Payments.Handlers.Queries;
+using WebUI.Models;
 
 namespace WebUI.Controllers
 {
@@ -12,20 +13,27 @@ namespace WebUI.Controllers
         //
         // GET: /Funds/
 
-        public ActionResult Summary()
+        public ActionResult Summary(SummaryModel model, string returnUrl)
         {
             var accountGuid = (Guid)Session["AccountGuid"];
+            var funds = GetFundsHandler.GetFunds(accountGuid);
 
-            var fund = GetFundsHandler.GetFunds(accountGuid).First();
-            ViewData["Name"] = fund.Name;
-            ViewData["Amount"] = fund.Amount;            
-            ViewData["GoalAmount"] = fund.GoalAmount;
-            ViewData["CreatedOn"] = fund.CreatedOn;
-            ViewData["ReleaseOn"] = fund.ReleaseOn;
+            model.Funds = new List<Fund>();
+            foreach(var f in funds)
+            {
+                model.Funds.Add(new Fund
+                {
+                    Name = f.Name,
+                    Amount = f.Amount,
+                    CreatedOn = f.CreatedOn,
+                    GoalAmount = f.GoalAmount,
+                    ReleaseOn = f.ReleaseOn
+                });
+            }
 
             ViewBag.Message = "Funds viewbag title";          
 
-            return View();
+            return View(model);
         }
 
 

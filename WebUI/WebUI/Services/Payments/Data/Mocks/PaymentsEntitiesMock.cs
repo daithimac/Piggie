@@ -18,8 +18,20 @@ namespace WebUI.Services.Payments.Data.Mocks
               CreatedOn = DateTime.Now, 
               FundGuid = Guid.NewGuid(),
               FundId = 0, GoalAmount = 1000,
-              Name = "MyFund", 
+              Name = "MyFund1", 
               ReleaseOn = DateTime.Now
+            });
+
+            Funds.Add(new Fund
+            {
+                AccountGuid = Guid.NewGuid(),
+                Amount = 100,
+                CreatedOn = DateTime.Now,
+                FundGuid = Guid.NewGuid(),
+                FundId = 0,
+                GoalAmount = 1000,
+                Name = "MyFund2",
+                ReleaseOn = DateTime.Now
             });
         }
     }
