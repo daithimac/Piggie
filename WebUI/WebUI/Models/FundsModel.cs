@@ -9,9 +9,11 @@ namespace WebUI.Models
     {
         public String Name { get; set; }
         public Decimal Amount { get; set; }
+        public Decimal Balance { get; set; }
         public Decimal GoalAmount { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime ReleaseOn { get; set; }
+        public String Frequency { get; set; }
     }
 
     public class SummaryModel
@@ -24,5 +26,6 @@ namespace WebUI.Models
         public String Name { get; set; }
         public Decimal GoalAmount { get; set; }
         public DateTime ReleaseOn { get; set; }
+        public String Frequency { get; set; }
     }
 }

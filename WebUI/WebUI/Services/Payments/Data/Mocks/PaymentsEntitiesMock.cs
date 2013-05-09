@@ -13,18 +13,23 @@ namespace WebUI.Services.Payments.Data.Mocks
         {
             Funds = new List<Fund>();
             Funds.Add(new Fund
-            { AccountGuid = Guid.NewGuid(), 
-              Amount = 100, 
-              CreatedOn = DateTime.Now, 
-              FundGuid = Guid.NewGuid(),
-              FundId = 0, GoalAmount = 1000,
-              Name = "MyFund1", 
-              ReleaseOn = DateTime.Now
+            { 
+                AccountGuid = Guid.NewGuid(), 
+                Amount = 100, 
+                Balance = 100,
+                Frequency = "Monthly",
+                CreatedOn = DateTime.Now, 
+                FundGuid = Guid.NewGuid(),
+                FundId = 0, GoalAmount = 1000,
+                Name = "MyFund1", 
+                ReleaseOn = DateTime.Now
             });
 
             Funds.Add(new Fund
             {
                 AccountGuid = Guid.NewGuid(),
+                Balance = 25,
+                Frequency = "bi-enniannly",
                 Amount = 100,
                 CreatedOn = DateTime.Now,
                 FundGuid = Guid.NewGuid(),

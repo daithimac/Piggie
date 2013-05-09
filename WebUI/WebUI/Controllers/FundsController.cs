@@ -27,7 +27,8 @@ namespace WebUI.Controllers
                 fundGuid, 
                 model.GoalAmount, 
                 model.Name, 
-                model.ReleaseOn);
+                model.ReleaseOn,
+                model.Frequency);
             
             return RedirectToAction("Summary", "Funds");
         }
@@ -43,6 +44,8 @@ namespace WebUI.Controllers
                 model.Funds.Add(new SummaryFund
                 {
                     Name = f.Name,
+                    Balance = f.Balance,
+                    Frequency = f.Frequency,
                     Amount = f.Amount,
                     CreatedOn = f.CreatedOn,
                     GoalAmount = f.GoalAmount,
