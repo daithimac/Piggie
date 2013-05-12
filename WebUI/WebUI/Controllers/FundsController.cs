@@ -25,7 +25,7 @@ namespace WebUI.Controllers
             var accountGuid = (Guid)Session["AccountGuid"];
             var fundGuid = Guid.NewGuid();
 
-            CreateFundHandler.CreateFund(accountGuid, 
+            CreateFundHandler.Handle(accountGuid, 
                 fundGuid, 
                 model.GoalAmount, 
                 model.Name, 
@@ -39,7 +39,7 @@ namespace WebUI.Controllers
         public ActionResult Summary(SummaryModel model, string returnUrl)
         {
             var accountGuid = (Guid)Session["AccountGuid"];
-            var funds = GetFundsHandler.GetFunds(accountGuid);
+            var funds = GetFundsHandler.Handle(accountGuid);
 
             model.Funds = new List<SummaryFund>();
             foreach(var f in funds)

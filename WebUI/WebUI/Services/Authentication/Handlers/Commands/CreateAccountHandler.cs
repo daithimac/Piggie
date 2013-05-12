@@ -9,7 +9,7 @@ namespace WebUI.Services.Authentication.Handlers.Commands
 {
     public static class CreateAccountHandler
     {
-        public static void CreateAccount(Guid accountGuid, String login, String password, String forename, String surname)
+        public static void Handle(Guid accountGuid, String login, String password, String forename, String surname)
         {
             //using (var db = new AuthenticationEntities())
             //{

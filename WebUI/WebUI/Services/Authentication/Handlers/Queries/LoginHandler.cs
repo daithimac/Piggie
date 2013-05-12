@@ -9,7 +9,7 @@ namespace WebUI.Services.Authentication.Handlers.Queries
 {
     public static class LoginHandler
     {//TODO: commands shouldn't return results
-        public static Guid? Login(String email, String password)
+        public static Guid? Handle(String email, String password)
         {
             //using (var db = new AuthenticationEntities())
             //{

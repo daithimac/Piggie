@@ -38,7 +38,7 @@ namespace WebUI.Controllers
         public ActionResult Login(LoginModel model)//, string returnUrl)
         {
             //if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
-            var accountGuid = LoginHandler.Login(model.UserName, model.Password);
+            var accountGuid = LoginHandler.Handle(model.UserName, model.Password);
             if( accountGuid != null )
             {
                 Session["UserName"] = model.UserName;
@@ -89,7 +89,7 @@ namespace WebUI.Controllers
                 try
                 {
                     var accountGuid = Guid.NewGuid();
-                    CreateAccountHandler.CreateAccount(accountGuid, model.Email, model.Password, model.Forename, model.Surname);
+                    CreateAccountHandler.Handle(accountGuid, model.Email, model.Password, model.Forename, model.Surname);
                     //TODO: replace this with session
                     //WebSecurity.CreateUserAndAccount(model.Email, model.Password);
                     //WebSecurity.Login(model.Email, model.Password);

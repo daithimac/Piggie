@@ -8,6 +8,7 @@ namespace WebUI.Services.Payments.Data.Mocks
     public static class PaymentsEntitiesMock
     {
         public static List<Fund> Funds { get; set; }
+        public static List<PaymentAccount> PaymentAccounts { get; set; }
 
         static PaymentsEntitiesMock()
         {

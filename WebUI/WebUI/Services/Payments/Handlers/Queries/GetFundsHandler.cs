@@ -9,7 +9,7 @@ namespace WebUI.Services.Payments.Handlers.Queries
 {
     public static class GetFundsHandler
     {
-        public static IQueryable<Fund> GetFunds(Guid accountGuid)
+        public static IQueryable<Fund> Handle(Guid accountGuid)
         {
             //using (var db = new PaymentsEntities())
             //{

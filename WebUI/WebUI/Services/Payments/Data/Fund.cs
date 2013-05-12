@@ -18,8 +18,6 @@ namespace WebUI.Services.Payments.Data
         public System.Guid FundGuid { get; set; }
         public System.Guid AccountGuid { get; set; }
         public string Name { get; set; }
-        public decimal Balance { get; set; }
-        public String Frequency { get; set; }
         public decimal Amount { get; set; }
         public decimal GoalAmount { get; set; }
         public System.DateTime CreatedOn { get; set; }

@@ -15,5 +15,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PaymentAccounts">
+      <EntityTypeMapping TypeName="PaymentsModel.PaymentAccount">
+        <MappingFragment StoreEntitySet="PaymentAccounts">
+          <ScalarProperty Name="CCV" ColumnName="CCV" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="AccountGuid" ColumnName="AccountGuid" />
+          <ScalarProperty Name="PaymentAccountGuid" ColumnName="PaymentAccountGuid" />
+          <ScalarProperty Name="PaymentAccountId" ColumnName="PaymentAccountId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
