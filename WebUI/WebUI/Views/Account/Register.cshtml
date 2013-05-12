@@ -1,4 +1,4 @@
-﻿@model WebUI.Models.RegisterModel
+﻿    @model WebUI.Models.RegisterModel
 @{
     ViewBag.Title = "Register";
 }
@@ -33,13 +33,11 @@
                     @Html.LabelFor(m => m.ConfirmPassword)
                     @Html.PasswordFor(m => m.ConfirmPassword)
                 </p>
-            <input type="submit" class="register button" value="Register" />
-                <p class="change_link"> 
-                    Already a member? @Html.ActionLink("Login", "Login") 
+                <p class="login button">
+                    <input type="submit" value="Register" />
                 </p>
-            
-            <p class="change_link"> 
-                    LogOff @Html.ActionLink("LogOff", "Account") 
+                <p class="change_link"> 
+                    Already a Menber? @Html.ActionLink("Login", "Login") 
                 </p>
         }
         </div>

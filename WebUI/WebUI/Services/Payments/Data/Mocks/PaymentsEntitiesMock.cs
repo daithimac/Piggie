@@ -15,27 +15,27 @@ namespace WebUI.Services.Payments.Data.Mocks
             Funds.Add(new Fund
             { 
                 AccountGuid = Guid.NewGuid(), 
-                Amount = 100, 
+                Amount = 200, 
                 Balance = 100,
                 Frequency = "Monthly",
                 CreatedOn = DateTime.Now, 
                 FundGuid = Guid.NewGuid(),
                 FundId = 0, GoalAmount = 1000,
-                Name = "MyFund1", 
+                Name = "Electric Picnic Ticket", 
                 ReleaseOn = DateTime.Now
             });
 
             Funds.Add(new Fund
             {
                 AccountGuid = Guid.NewGuid(),
-                Balance = 25,
-                Frequency = "bi-enniannly",
-                Amount = 100,
+                Balance = 800,
+                Frequency = "Weekly",
+                Amount = 6000,
                 CreatedOn = DateTime.Now,
                 FundGuid = Guid.NewGuid(),
                 FundId = 0,
                 GoalAmount = 1000,
-                Name = "MyFund2",
+                Name = "Engagement Ring",
                 ReleaseOn = DateTime.Now
             });
         }

@@ -57,14 +57,12 @@ namespace WebUI.Controllers
         // POST: /Account/LogOff
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            //WebSecurity.Logout();
+            WebSecurity.Logout();
 
-            Session["AccountGuid"] = null;
-
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home");
         }
 
         //
@@ -97,7 +95,7 @@ namespace WebUI.Controllers
                     //WebSecurity.Login(model.Email, model.Password);
                     Session["AccountGuid"] = accountGuid;
 
-                    return RedirectToAction("Summary", "Funds");
+                    return RedirectToAction("Create", "Funds");
                 }
                 catch (MembershipCreateUserException e)
                 {

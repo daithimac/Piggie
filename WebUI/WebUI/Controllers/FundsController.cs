@@ -14,6 +14,8 @@ namespace WebUI.Controllers
         public ActionResult Create(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
+            var items = new List<String> {"Weekly", "Monthly" };
+            ViewBag.Frequency = new SelectList(items);
             return View();
         }
 
@@ -28,8 +30,9 @@ namespace WebUI.Controllers
                 model.GoalAmount, 
                 model.Name, 
                 model.ReleaseOn,
-                model.Frequency);
-            
+                model.Frequency,
+                model.RecipiantAccount);
+
             return RedirectToAction("Summary", "Funds");
         }
 

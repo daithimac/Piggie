@@ -1,9 +1,17 @@
-﻿<link rel="stylesheet" type="text/css" href="~/Content/Style1.css" />
-<text>
-    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
-        <h1>LogOff</h1>
+﻿@if (Request.IsAuthenticated) {
+    <text>
+        Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <p class="change_link">
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+            </p>
+        }
+    </text>
+} else {
+    <ul>
         <p class="change_link">
-            @Html.ActionLink("LogOff", "Account") 
+        @Html.ActionLink("Log Out", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
         </p>
-    }
-</text>
+    </ul>
+}
