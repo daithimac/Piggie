@@ -8,17 +8,19 @@ namespace WebUI.Services.Payments.Data.Mocks
     public static class PaymentsEntitiesMock
     {
         public static List<Fund> Funds { get; set; }
-        public static List<PaymentAccount> PaymentAccounts { get; set; }
+        public static List<PaymentCard> PaymentCards { get; set; }
 
         static PaymentsEntitiesMock()
         {
+            PaymentCards = new List<PaymentCard>();
+
             Funds = new List<Fund>();
             Funds.Add(new Fund
             { 
                 AccountGuid = Guid.NewGuid(), 
                 Amount = 200, 
                 Balance = 100,
-                Frequency = "Monthly",
+                Frequency = 1,
                 CreatedOn = DateTime.Now, 
                 FundGuid = Guid.NewGuid(),
                 FundId = 0, GoalAmount = 1000,
@@ -30,7 +32,7 @@ namespace WebUI.Services.Payments.Data.Mocks
             {
                 AccountGuid = Guid.NewGuid(),
                 Balance = 800,
-                Frequency = "Weekly",
+                Frequency = 0,
                 Amount = 6000,
                 CreatedOn = DateTime.Now,
                 FundGuid = Guid.NewGuid(),

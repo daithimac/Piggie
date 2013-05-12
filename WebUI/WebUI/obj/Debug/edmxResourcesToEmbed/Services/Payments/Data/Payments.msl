@@ -4,6 +4,8 @@
     <EntitySetMapping Name="Funds">
       <EntityTypeMapping TypeName="PaymentsModel.Fund">
         <MappingFragment StoreEntitySet="Funds">
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
           <ScalarProperty Name="FundId" ColumnName="FundId" />
           <ScalarProperty Name="FundGuid" ColumnName="FundGuid" />
           <ScalarProperty Name="AccountGuid" ColumnName="AccountGuid" />
@@ -15,9 +17,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PaymentAccounts">
-      <EntityTypeMapping TypeName="PaymentsModel.PaymentAccount">
-        <MappingFragment StoreEntitySet="PaymentAccounts">
+    <EntitySetMapping Name="PaymentCards">
+      <EntityTypeMapping TypeName="PaymentsModel.PaymentCard">
+        <MappingFragment StoreEntitySet="PaymentCards">
           <ScalarProperty Name="CCV" ColumnName="CCV" />
           <ScalarProperty Name="CardType" ColumnName="CardType" />
           <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
@@ -26,8 +28,8 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="AccountGuid" ColumnName="AccountGuid" />
-          <ScalarProperty Name="PaymentAccountGuid" ColumnName="PaymentAccountGuid" />
-          <ScalarProperty Name="PaymentAccountId" ColumnName="PaymentAccountId" />
+          <ScalarProperty Name="PaymentCardGuid" ColumnName="PaymentCardGuid" />
+          <ScalarProperty Name="PaymentCardId" ColumnName="PaymentCardId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

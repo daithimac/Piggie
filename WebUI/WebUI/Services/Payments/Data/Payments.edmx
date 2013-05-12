@@ -7,7 +7,7 @@
     <Schema Namespace="PaymentsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="PaymentsModelStoreContainer">
           <EntitySet Name="Funds" EntityType="PaymentsModel.Store.Funds" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PaymentAccounts" EntityType="PaymentsModel.Store.PaymentAccounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentCards" EntityType="PaymentsModel.Store.PaymentCards" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="Funds">
           <Key>
@@ -21,21 +21,23 @@
           <Property Name="GoalAmount" Type="decimal" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
           <Property Name="ReleaseOn" Type="datetime" Nullable="false" />
+          <Property Name="Balance" Type="decimal" Nullable="false" />
+          <Property Name="Frequency" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="PaymentAccounts">
+        <EntityType Name="PaymentCards">
           <Key>
-            <PropertyRef Name="PaymentAccountId" />
+            <PropertyRef Name="PaymentCardId" />
           </Key>
-          <Property Name="PaymentAccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="PaymentAccountGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PaymentCardId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentCardGuid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="AccountGuid" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Title" Type="numeric" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Address1" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Address2" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="CardNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="CardType" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="CCV" Type="int" Nullable="false" />
+          <Property Name="CCV" Type="nvarchar" Nullable="false" MaxLength="50" />
         </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -43,7 +45,7 @@
       <Schema Namespace="PaymentsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="PaymentsEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Funds" EntityType="PaymentsModel.Fund" />
-          <EntitySet Name="PaymentAccounts" EntityType="PaymentsModel.PaymentAccount" />
+          <EntitySet Name="PaymentCards" EntityType="PaymentsModel.PaymentCard" />
         </EntityContainer>
         <EntityType Name="Fund">
           <Key>
@@ -57,24 +59,26 @@
           <Property Name="GoalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ReleaseOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Type="Decimal" Name="Balance" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="Frequency" Nullable="false" />
         </EntityType>
         <ComplexType Name="ComplexType1">
           <Property Type="String" Name="PaymentAccountGuid" Nullable="false" />
         </ComplexType>
-        <EntityType Name="PaymentAccount">
+        <EntityType Name="PaymentCard">
           <Key>
-            <PropertyRef Name="PaymentAccountId" />
+            <PropertyRef Name="PaymentCardId" />
           </Key>
-          <Property Type="Int32" Name="PaymentAccountId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Guid" Name="PaymentAccountGuid" Nullable="false" />
+          <Property Type="Int32" Name="PaymentCardId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="PaymentCardGuid" Nullable="false" />
           <Property Type="Guid" Name="AccountGuid" Nullable="false" />
-          <Property Type="Decimal" Name="Title" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Address1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Address2" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="CardNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="CardType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="CCV" Nullable="false" />
+          <Property Type="String" Name="CCV" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -85,6 +89,8 @@
           <EntitySetMapping Name="Funds">
             <EntityTypeMapping TypeName="PaymentsModel.Fund">
               <MappingFragment StoreEntitySet="Funds">
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
                 <ScalarProperty Name="FundId" ColumnName="FundId" />
                 <ScalarProperty Name="FundGuid" ColumnName="FundGuid" />
                 <ScalarProperty Name="AccountGuid" ColumnName="AccountGuid" />
@@ -96,9 +102,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PaymentAccounts">
-            <EntityTypeMapping TypeName="PaymentsModel.PaymentAccount">
-              <MappingFragment StoreEntitySet="PaymentAccounts">
+          <EntitySetMapping Name="PaymentCards">
+            <EntityTypeMapping TypeName="PaymentsModel.PaymentCard">
+              <MappingFragment StoreEntitySet="PaymentCards">
                 <ScalarProperty Name="CCV" ColumnName="CCV" />
                 <ScalarProperty Name="CardType" ColumnName="CardType" />
                 <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
@@ -107,8 +113,8 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="AccountGuid" ColumnName="AccountGuid" />
-                <ScalarProperty Name="PaymentAccountGuid" ColumnName="PaymentAccountGuid" />
-                <ScalarProperty Name="PaymentAccountId" ColumnName="PaymentAccountId" />
+                <ScalarProperty Name="PaymentCardGuid" ColumnName="PaymentCardGuid" />
+                <ScalarProperty Name="PaymentCardId" ColumnName="PaymentCardId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

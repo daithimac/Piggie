@@ -166,14 +166,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FundsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PaymentAccountController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\FundsModel.cs" />
-    <Compile Include="Models\PaymentAccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Authentication\Data\Account.cs">
       <DependentUpon>Authentication.tt</DependentUpon>
@@ -203,7 +201,7 @@
       <DependentUpon>Payments.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\Payments\Data\Mocks\PaymentsEntitiesMock.cs" />
-    <Compile Include="Services\Payments\Data\PaymentAccount.cs">
+    <Compile Include="Services\Payments\Data\PaymentCard.cs">
       <DependentUpon>Payments.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\Payments\Data\Payments.Context.cs">
@@ -224,6 +222,7 @@
     <Compile Include="Services\Payments\Handlers\Commands\CreateFundHandler.cs" />
     <Compile Include="Services\Payments\Handlers\Commands\CreatePaymentAccountHandler.cs" />
     <Compile Include="Services\Payments\Handlers\Queries\GetFundsHandler.cs" />
+    <Compile Include="Services\Payments\Handlers\Queries\GetPaymentCardHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate-custom.css" />
@@ -301,9 +300,9 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Views\PaymentAccount\CreatePaymentAccount.cshtml" />
+    <Content Include="Views\Funds\CreatePaymentCard.cshtml" />
     <None Include="Views\Funds\FundDetail.cshtml" />
-    <None Include="Views\Funds\Create.cshtml" />
+    <None Include="Views\Funds\CreateFund.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

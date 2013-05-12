@@ -9,6 +9,17 @@ using System.Web.Mvc;
 
 namespace WebUI.Models
 {
+    public class CreatePaymentCardModel
+    {
+        public String Title { get; set; }
+        public String Name { get; set; }
+        public String Address1 { get; set; }
+        public String Address2 { get; set; }
+        public String CardNumber { get; set; }
+        public String CardType { get; set; }
+        public String CCV { get; set; }
+    }
+
     public class SummaryFund
     {
         
@@ -30,7 +41,7 @@ namespace WebUI.Models
         public List<SummaryFund> Funds { get; set; }
     }
 
-    public class CreateModel
+    public class CreateFundModel
     {
         [Required(ErrorMessage = "Name is required")]
         public String Name { get; set; }
@@ -156,5 +167,7 @@ namespace WebUI.Models
 
             return ((checksum % 10) == 0);
         }
+
+       
     }
 }

@@ -26,6 +26,6 @@ namespace WebUI.Services.Payments.Data
         }
     
         public DbSet<Fund> Funds { get; set; }
-        public DbSet<PaymentAccount> PaymentAccounts { get; set; }
+        public DbSet<PaymentCard> PaymentCards { get; set; }
     }
 }

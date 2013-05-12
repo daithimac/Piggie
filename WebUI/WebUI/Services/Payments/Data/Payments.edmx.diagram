@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="ce09a1073ff74ad4a430dfe9f8bd2660" Name="Diagram1">
         <EntityTypeShape EntityType="PaymentsModel.Fund" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PaymentsModel.PaymentAccount" Width="1.5" PointX="7.8276388700248853" PointY="22.940096731735437" />
+        <EntityTypeShape EntityType="PaymentsModel.PaymentCard" Width="1.5" PointX="3.625" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

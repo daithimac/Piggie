@@ -22,5 +22,7 @@ namespace WebUI.Services.Payments.Data
         public decimal GoalAmount { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public System.DateTime ReleaseOn { get; set; }
+        public decimal Balance { get; set; }
+        public int Frequency { get; set; }
     }
 }

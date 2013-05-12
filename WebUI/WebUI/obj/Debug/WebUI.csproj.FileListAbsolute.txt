@@ -142,6 +142,5 @@ C:\Users\Daithimac\Desktop\Piggie\WebUI\WebUI\bin\DotNetOpenAuth.OAuth.Consumer.
 C:\Users\Daithimac\Desktop\Piggie\WebUI\WebUI\bin\DotNetOpenAuth.OAuth.xml
 C:\Users\Daithimac\Desktop\Piggie\WebUI\WebUI\bin\DotNetOpenAuth.OpenId.xml
 C:\Users\Daithimac\Desktop\Piggie\WebUI\WebUI\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-C:\Users\Daithimac\Desktop\Piggie\WebUI\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Daithimac\Desktop\Piggie\WebUI\WebUI\obj\Debug\WebUI.dll
 C:\Users\Daithimac\Desktop\Piggie\WebUI\WebUI\obj\Debug\WebUI.pdb

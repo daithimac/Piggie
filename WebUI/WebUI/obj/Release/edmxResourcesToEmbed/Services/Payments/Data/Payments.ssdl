@@ -2,6 +2,7 @@
 <Schema Namespace="PaymentsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="PaymentsModelStoreContainer">
     <EntitySet Name="Funds" EntityType="PaymentsModel.Store.Funds" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaymentCards" EntityType="PaymentsModel.Store.PaymentCards" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Funds">
     <Key>
@@ -15,5 +16,22 @@
     <Property Name="GoalAmount" Type="decimal" Nullable="false" />
     <Property Name="CreatedOn" Type="datetime" Nullable="false" />
     <Property Name="ReleaseOn" Type="datetime" Nullable="false" />
+    <Property Name="Balance" Type="decimal" Nullable="false" />
+    <Property Name="Frequency" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentCards">
+    <Key>
+      <PropertyRef Name="PaymentCardId" />
+    </Key>
+    <Property Name="PaymentCardId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentCardGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccountGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address1" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address2" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CardNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CardType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CCV" Type="nvarchar" Nullable="false" MaxLength="50" />
   </EntityType>
 </Schema>
